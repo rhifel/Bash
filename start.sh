@@ -1,7 +1,7 @@
 # echo "$HOME"
 # date +"%Y-%m-%d %H-%M-%S"
 
-# name="Rhifel Mar A. Buscado"
+# name="rhifel"
 
 # echo "$name"
 
