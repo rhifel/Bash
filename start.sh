@@ -1,7 +1,9 @@
+#!/bin/bash
+
 # echo "$HOME"
 # date +"%Y-%m-%d %H-%M-%S"
 
-# name="rhifel"
+# name="Rhifel Mar A. Buscado"
 
 # echo "$name"
 
@@ -13,9 +15,9 @@ USERNAME="TGV0bWVJbg=="
 
 login() {
     echo "====== System Login ======"
-    read -p "Username: " username
+    read -rp "Username: " username
     encoded_user=$(echo -n "$username" | base64)
-    read -s -p "Password: " password_input
+    read -rsp "Password: " password_input
     encoded_pass=$(echo -n "$password_input" | base64)
     echo
     if [[ "$encoded_user" == "$USERNAME" && "$encoded_pass" == "$PASSWORD" ]]; then
@@ -28,4 +30,11 @@ login() {
     fi
 }
 
+current_date_time() {
+    date_time=$(date +"%m/%d/%Y %H:%M:%S")
+    echo "DATE     TIME"
+    echo "$date_time"
+}
+
 login
+current_date_time
