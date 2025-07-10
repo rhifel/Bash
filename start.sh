@@ -36,5 +36,14 @@ current_date_time() {
     echo "$date_time"
 }
 
+user_info() {
+    echo "User: $USER"
+    echo "Home: $HOME"
+    echo "Shell: $SHELL"
+    GROUP=$(groups "$USER")
+    echo -e "GROUPS:\n$GROUP"
+}
+
 login
 current_date_time
+user_info
