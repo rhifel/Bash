@@ -44,6 +44,13 @@ user_info() {
     echo -e "GROUPS:\n$GROUP"
 }
 
+password_generator() {
+    read -rp "Length of Password: " length
+    pass=$(tr -dc 'A-Za-z0-9!@#$%^&*()_+=' </dev/urandom | head -c "$length")
+    echo "$pass"
+}
+
 login
 current_date_time
 user_info
+password_generator
