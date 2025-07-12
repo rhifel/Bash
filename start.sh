@@ -50,7 +50,25 @@ password_generator() {
     echo "$pass"
 }
 
-login
-current_date_time
-user_info
-password_generator
+ping_test() {
+
+    sites=("google.com" "github.com" "openai.com" "vers.com")
+
+    for site in "${sites[@]}";do
+        echo "Pinging $site......"
+        ping -c 1 "$site" | tee -a /dev/null
+
+        if [ $? -eq 0 ];then
+            echo "$site is reachable"
+        else
+            echo "$site is unreachable"
+        fi
+        echo ""
+    done
+}
+
+ping_test
+# login
+# current_date_time
+# user_info
+# password_generator
